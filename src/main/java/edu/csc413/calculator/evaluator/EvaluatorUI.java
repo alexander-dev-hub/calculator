@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public class EvaluatorUI extends JFrame implements ActionListener {
 
 	/**
@@ -96,7 +101,12 @@ public class EvaluatorUI extends JFrame implements ActionListener {
 		}
 
 		if (initFlag && e.getActionCommand() == "=") {
-			String result = String.valueOf(ev.eval(this.txField.getText()));
+			double d_result = ev.eval(this.txField.getText());
+			String result = "";
+			if (d_result % 1 == 0)
+				result = String.valueOf((int) d_result);
+			else
+				result = String.valueOf(d_result);
 			this.txField.setText(result);
 			initFlag = false;
 		}

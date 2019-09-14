@@ -7,7 +7,11 @@ import org.junit.Test;
 import edu.csc413.calculator.evaluator.Operand;
 import edu.csc413.calculator.operators.SubtractOperator;
 
-
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public class SubtractOperatorTest {
 
 	@Test

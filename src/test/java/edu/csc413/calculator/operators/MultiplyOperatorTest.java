@@ -7,7 +7,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public class MultiplyOperatorTest {
 
 	@Test

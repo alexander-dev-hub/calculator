@@ -5,6 +5,11 @@ import edu.csc413.calculator.operators.Operator;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public class Evaluator {
     private Stack<Operand> operandStack;
     private Stack<Operator> operatorStack;
@@ -23,14 +28,15 @@ public class Evaluator {
         // as tokens, too. But, we'll need to remember to filter out spaces.
         this.tokenizer = new StringTokenizer(expression, DELIMITERS, true);
 
-
         while (this.tokenizer.hasMoreTokens()) {
             // filter out spaces
             if (!(token = this.tokenizer.nextToken()).equals(" ")) {
                 // check if token is an operand
                 if (Operand.check(token)) {
+                	// an Operand object is created from the token
                     operandStack.push(new Operand(token));
                 } else {
+                	// If an operator token is scanned
                     if (!Operator.check(token)) {
                         System.out.println("*****invalid token******");
                         throw new RuntimeException("*****invalid token******");
@@ -42,7 +48,9 @@ public class Evaluator {
                     // skeleton for an example.
                     Operator newOperator = Operator.getOperator(token);
                     
-                    	
+                    //the operator Stack is not empty, and the
+                    //operator’s precedence is greater than the precedence of the Operator at the
+                    //top of the Stack
 					while (!operatorStack.empty() && operatorStack.peek().priority() >= newOperator.priority()) {
 						// note that when we eval the expression 1 - 2 we will
 						// push the 1 then the 2 and then do the subtraction operation

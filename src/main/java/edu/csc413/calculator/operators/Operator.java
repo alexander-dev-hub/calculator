@@ -4,6 +4,11 @@ import edu.csc413.calculator.evaluator.Operand;
 
 import java.util.HashMap;
 
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public abstract class Operator {
 	
 	static HashMap<String, Operator> operators = new HashMap<String, Operator>();
@@ -40,10 +45,6 @@ public abstract class Operator {
     public abstract int priority();
 
     public abstract Operand execute(Operand op1, Operand op2);
-//    {
-//        return null;
-//    }
-
 
     /**
      * determines if a given token is a valid operator.

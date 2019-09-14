@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public class EvaluatorDriver {
     /**
      * Driver class that uses Evaluator to evaluate expressions.
@@ -57,7 +62,10 @@ public class EvaluatorDriver {
                     System.out.print("Enter an Expression: ");
                     exp = input.readLine();
                     res = ev.eval(exp);
-                    System.out.printf("Expression : %s , Result %.1f\n", exp, res);
+                    if (res % 1 == 0)
+                    	System.out.printf("Expression : %s , Result %.0f\n", exp, res);
+                    else
+                    	System.out.printf("Expression : %s , Result %f\n", exp, res);
                 }
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());

@@ -29,7 +29,7 @@ public class Operand {
     }
 
     /**
-     * return value of operand
+     * return int value of operand
      */
 //    public int getValue() {
 //        return Integer.parseInt(token);

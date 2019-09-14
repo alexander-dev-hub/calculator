@@ -7,7 +7,11 @@ import org.junit.Test;
 
 import edu.csc413.calculator.evaluator.Operand;
 
-
+/**
+ * 
+ * @author Alexander
+ *
+ */
 public class AddOperatorTest {
 
 	@Test
